@@ -161,7 +161,7 @@
     /* ---- HERO ---- */
     .hero {
       padding: 148px 0 100px;
-      background: linear-gradient(160deg, #1B2A4A 0%, #0f1b33 60%, #0a1628 100%);
+      background: linear-gradient(160deg, rgba(27,42,74,0.88) 0%, rgba(15,27,51,0.92) 60%, rgba(10,22,40,0.95) 100%), url('images/hero-flood-protection.jpg') center/cover no-repeat;
       color: var(--white);
       position: relative;
       overflow: hidden;
@@ -287,6 +287,43 @@
       font-style: italic;
       max-width: 500px;
       margin: 0 auto;
+    }
+
+    /* ---- PRODUCT IMAGES ---- */
+    .product-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    /* ---- HYDRA SHOWCASE IMAGE ---- */
+    .hydra-showcase {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin: 0 auto 48px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+
+    /* ---- AUDIENCE CARD IMAGES ---- */
+    .audience-card-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 16px;
     }
 
     /* ---- VOLUME TIERS ---- */
@@ -846,6 +883,10 @@
       .hydra-features {
         grid-template-columns: 1fr;
       }
+
+      .hydra-showcase {
+        height: 280px;
+      }
     }
 
     @media (max-width: 640px) {
@@ -883,6 +924,18 @@
 
       .product-hero h3 {
         font-size: 1.4rem;
+      }
+
+      .product-images {
+        grid-template-columns: 1fr;
+      }
+
+      .product-img {
+        height: 200px;
+      }
+
+      .hydra-showcase {
+        height: 220px;
       }
 
       .volume-grid {
@@ -1005,6 +1058,12 @@
         <p>One product. Done right. Shipped fast. Priced to move.</p>
       </div>
 
+      <!-- Product Images -->
+      <div class="product-images">
+        <img src="images/product-sandbags-pallet.jpg" alt="Pallet of bulk sandbags shrink-wrapped and ready for shipping in a warehouse" class="product-img" loading="lazy" width="548" height="280">
+        <img src="images/product-sandbag-closeup.jpg" alt="Close-up of woven polypropylene sandbag showing UV-resistant material texture" class="product-img" loading="lazy" width="548" height="280">
+      </div>
+
       <!-- Product Hero Card -->
       <div class="product-hero">
         <h3>Standard Woven Polypropylene Sandbags</h3>
@@ -1081,7 +1140,7 @@
 
       <div class="audience-grid">
         <div class="audience-card">
-          <span class="audience-icon" aria-hidden="true">&#9963;</span>
+          <img src="images/segment-government.jpg" alt="Aerial view of sandbag flood wall protecting a residential neighborhood from rising floodwater" class="audience-card-img" loading="lazy" width="320" height="140">
           <h3>Government &amp; Municipal</h3>
           <p>Flood preparedness stockpiles, public works departments, emergency management agencies. We supply the volume your community needs.</p>
         </div>
@@ -1091,7 +1150,7 @@
           <p>Force protection, FOB construction, ballistic fortification, flood response. Mil-spec performance at factory direct pricing.</p>
         </div>
         <div class="audience-card">
-          <span class="audience-icon" aria-hidden="true">&#9874;</span>
+          <img src="images/segment-construction.jpg" alt="Construction site using sandbags for erosion control along a trench with heavy equipment at sunset" class="audience-card-img" loading="lazy" width="320" height="140">
           <h3>Contractors &amp; Construction</h3>
           <p>Erosion control, site dewatering, temporary flood barriers. Order by the pallet, deliver to the job site.</p>
         </div>
@@ -1131,6 +1190,8 @@
         <div class="hydra-feature"><span class="icon">&#10003;</span> Compact roll-up storage</div>
         <div class="hydra-feature"><span class="icon">&#10003;</span> Water-filled &mdash; zero material cost per use</div>
       </div>
+
+      <img src="images/hydrabarrier-deployed.jpg" alt="HydraBarrier water-filled flood barrier deployed at a warehouse loading dock, protecting against rising floodwater" class="hydra-showcase" loading="lazy" width="720" height="360">
 
       <div class="products-grid">
         <div class="product-card">
