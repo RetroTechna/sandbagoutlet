@@ -1103,8 +1103,7 @@
       <div class="signup-inner">
         <h2>Get the Complete Storm Prep Checklist</h2>
         <p>Plus early access to seasonal BOGO deals and bulk pricing alerts.</p>
-        <form class="signup-form" action="https://formspree.io/f/PLACEHOLDER" method="POST">
-          <input type="hidden" name="_subject" value="Storm Prep Checklist Request">
+        <form class="signup-form" action="https://retro-forms.fred-4cf.workers.dev/sandbag/newsletter" method="POST">
           <input type="text" name="name" placeholder="Your name" required autocomplete="name">
           <input type="email" name="email" placeholder="Email address" required autocomplete="email">
           <input type="text" name="zip" placeholder="Zip code" class="full-width" required autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}" maxlength="5">
@@ -1154,6 +1153,35 @@
         if (el) {
           e.preventDefault();
           el.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Form submission handler
+    document.querySelectorAll('.signup-form').forEach(function(form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type="submit"]');
+        var originalText = btn.textContent;
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+
+        try {
+          var response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form)
+          });
+          var result = await response.json();
+
+          if (result.success) {
+            form.innerHTML = '<div style="text-align:center;padding:2rem;"><p style="color:var(--cta);font-size:1.1rem;font-weight:600;">' + result.message + '</p></div>';
+          } else {
+            throw new Error(result.error);
+          }
+        } catch (err) {
+          btn.textContent = originalText;
+          btn.disabled = false;
+          alert('Something went wrong. Please try again or email us directly.');
         }
       });
     });
