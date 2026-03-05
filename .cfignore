@@ -1,0 +1,9 @@
+# Dev/build files — excluded from Cloudflare Pages deploy
+.claude/
+.git/
+.DS_Store
+campaigns/
+deploy.sh
+.cfignore
+.gitignore
+*.md

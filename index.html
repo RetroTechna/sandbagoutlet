@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SandbagOutlet — Factory Direct Sandbags & Flood Protection</title>
+  <meta name="description" content="Bulk sandbags at factory direct prices. Plus exclusive BOGO deals on HydraBarrier reusable flood barriers. One source for total flood protection.">
+  <meta property="og:title" content="SandbagOutlet — Factory Direct Sandbags & Flood Protection">
+  <meta property="og:description" content="Bulk sandbags at factory direct prices. Plus exclusive BOGO deals on HydraBarrier reusable flood barriers. One source for total flood protection.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sandbagoutlet.com">
+  <meta property="og:image" content="https://sandbagoutlet.com/images/logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #1B2A4A;
+      --cta: #FF6B35;
+      --cta-hover: #e55a28;
+      --white: #ffffff;
+      --light: #f5f7fa;
+      --gray: #6b7280;
+      --dark: #111827;
+      --border: #e5e7eb;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      line-height: 1.2;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(27, 42, 74, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 56px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    /* ---- BUTTONS ---- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--cta);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--cta-hover);
+      box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.12);
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.2);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      padding: 148px 0 100px;
+      background: linear-gradient(160deg, #1B2A4A 0%, #0f1b33 60%, #0a1628 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,107,53,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 720px;
+    }
+
+    .hero h1 {
+      font-size: 3.25rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--cta);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 600px;
+      margin-bottom: 36px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ---- SECTION SPACING ---- */
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-dark {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .section-light {
+      background: var(--light);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 56px;
+    }
+
+    .section-header h2 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-dark .section-header h2 {
+      color: var(--white);
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--gray);
+    }
+
+    .section-dark .section-header p {
+      color: rgba(255,255,255,0.65);
+    }
+
+    /* ---- PRODUCT HERO CARD ---- */
+    .product-hero {
+      background: var(--primary);
+      border-radius: 16px;
+      padding: 48px;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .product-hero h3 {
+      font-size: 1.8rem;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .product-hero-specs {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 20px;
+    }
+
+    .product-hero-tagline {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      font-style: italic;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* ---- VOLUME TIERS ---- */
+    .volume-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+
+    .volume-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: box-shadow 0.3s, transform 0.3s;
+      position: relative;
+    }
+
+    .volume-card:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+      transform: translateY(-3px);
+    }
+
+    .volume-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--cta);
+      margin-bottom: 4px;
+    }
+
+    .volume-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .volume-desc {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    .volume-cta {
+      text-align: center;
+    }
+
+    /* ---- VALUE PROPS ---- */
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .value-item {
+      text-align: center;
+    }
+
+    .value-icon {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      display: block;
+      color: var(--cta);
+    }
+
+    .value-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .value-desc {
+      font-size: 0.8rem;
+      color: var(--gray);
+      line-height: 1.4;
+    }
+
+    /* ---- PRODUCT CARDS (HydraBarrier) ---- */
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.3s, transform 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+    }
+
+    .product-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      width: fit-content;
+    }
+
+    .product-card h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .product-desc {
+      color: var(--gray);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .product-price {
+      font-size: 1rem;
+      color: var(--dark);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .product-ideal {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-bottom: 28px;
+    }
+
+    .product-card .btn {
+      margin-top: auto;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ---- PARTNERSHIP BANNER ---- */
+    .partnership-label {
+      display: inline-block;
+      background: var(--cta);
+      color: var(--white);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 16px;
+    }
+
+    .hydra-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+
+    .hydra-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--dark);
+    }
+
+    .hydra-feature .icon {
+      color: #059669;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .partnership-note {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1rem;
+      color: var(--gray);
+      font-style: italic;
+    }
+
+    /* ---- COMPARISON — CHOOSE LAYOUT ---- */
+    .choose-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .choose-card {
+      border-radius: 16px;
+      padding: 40px;
+    }
+
+    .choose-card.sandbags {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .choose-card.hydra {
+      background: var(--cta);
+      color: var(--white);
+    }
+
+    .choose-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 24px;
+      color: var(--white);
+    }
+
+    .choose-list {
+      list-style: none;
+    }
+
+    .choose-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .choose-list li::before {
+      content: '\2713';
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .choose-card.sandbags .choose-list li::before {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .choose-card.hydra .choose-list li::before {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .choose-footnote {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1.05rem;
+      color: var(--gray);
+    }
+
+    .choose-footnote a {
+      color: var(--cta);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .choose-footnote a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---- AUDIENCE GRID ---- */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .audience-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 32px 28px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .audience-card:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .audience-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .audience-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .audience-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+    }
+
+    /* ---- QUOTE FORM SECTION ---- */
+    .quote-section {
+      background: var(--light);
+      padding: 96px 0;
+    }
+
+    .quote-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .quote-inner h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 12px;
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+
+    .quote-inner > p {
+      text-align: center;
+      color: var(--gray);
+      font-size: 1.05rem;
+      margin-bottom: 36px;
+    }
+
+    .quote-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+    }
+
+    .quote-form input,
+    .quote-form select,
+    .quote-form textarea {
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--dark);
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .quote-form input:focus,
+    .quote-form select:focus,
+    .quote-form textarea:focus {
+      border-color: var(--cta);
+    }
+
+    .quote-form .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .quote-form textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .quote-form button {
+      grid-column: 1 / -1;
+    }
+
+    .quote-note {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    /* ---- SIGNUP SECTION ---- */
+    .signup-section {
+      background: linear-gradient(160deg, #1B2A4A 0%, #0f1b33 100%);
+      color: var(--white);
+      padding: 96px 0;
+    }
+
+    .signup-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .signup-inner h2 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .signup-inner > p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      margin-bottom: 36px;
+    }
+
+    .signup-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .signup-form input {
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .signup-form input::placeholder {
+      color: rgba(255,255,255,0.4);
+    }
+
+    .signup-form input:focus {
+      border-color: var(--cta);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .signup-form .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .signup-form button {
+      grid-column: 1 / -1;
+      font-size: 1rem;
+    }
+
+    .signup-note {
+      margin-top: 16px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: #0a1628;
+      color: rgba(255,255,255,0.5);
+      padding: 48px 0 32px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      height: 60px;
+      width: auto;
+      opacity: 0.8;
+    }
+
+    .footer-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+    }
+
+    .footer-tm {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ---- MOBILE NAV ---- */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 16px 24px 24px;
+        gap: 16px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      .volume-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .value-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .choose-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .audience-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hydra-features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 120px 0 72px;
+      }
+
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+
+      .hero p {
+        font-size: 1.05rem;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+      }
+
+      .hero-btns .btn {
+        width: 100%;
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+
+      .section-header h2 {
+        font-size: 1.75rem;
+      }
+
+      .product-hero {
+        padding: 32px 24px;
+      }
+
+      .product-hero h3 {
+        font-size: 1.4rem;
+      }
+
+      .volume-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .volume-number {
+        font-size: 1.6rem;
+      }
+
+      .value-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .audience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-section {
+        padding: 64px 0;
+      }
+
+      .quote-form {
+        grid-template-columns: 1fr;
+        padding: 28px 24px;
+      }
+
+      .quote-inner h2 {
+        font-size: 1.75rem;
+      }
+
+      .signup-form {
+        grid-template-columns: 1fr;
+      }
+
+      .signup-inner h2 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo"><img src="images/logo.jpeg" alt="SandbagOutlet.com — Factory Direct Pricing"></a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="#sandbags">Sandbags</a></li>
+        <li><a href="#barriers">Flood Barriers</a></li>
+        <li><a href="#quote">Get a Quote</a></li>
+        <li><a href="#signup">Storm Prep</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Factory Direct Sandbags &amp; Flood Barriers &mdash; <span>Ready Before the Storm.</span></h1>
+        <p>Bulk sandbags at wholesale prices. Plus, exclusive BOGO deals on HydraBarrier reusable flood barriers. One source. Total flood protection.</p>
+        <div class="hero-btns">
+          <a href="#sandbags" class="btn btn-primary">Shop Sandbags by the Pallet</a>
+          <a href="#barriers" class="btn btn-secondary">Shop Flood Barriers &mdash; BOGO Deal</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sandbags Section -->
+  <section id="sandbags" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Factory Direct Sandbags &mdash; Any Volume, Any Destination</h2>
+        <p>One product. Done right. Shipped fast. Priced to move.</p>
+      </div>
+
+      <!-- Product Hero Card -->
+      <div class="product-hero">
+        <h3>Standard Woven Polypropylene Sandbags</h3>
+        <p class="product-hero-specs">14" &times; 26" &nbsp;&bull;&nbsp; White &nbsp;&bull;&nbsp; UV-Resistant &nbsp;&bull;&nbsp; Empty (Unfilled)</p>
+        <p class="product-hero-tagline">"The same sandbag trusted by municipalities, military, and contractors nationwide."</p>
+      </div>
+
+      <!-- Volume Tiers -->
+      <div class="volume-grid">
+        <div class="volume-card">
+          <div class="volume-number">100s</div>
+          <div class="volume-label">Small Projects</div>
+          <p class="volume-desc">Homeowner prep, small property protection, DIY flood barriers</p>
+        </div>
+        <div class="volume-card">
+          <div class="volume-number">1,000s</div>
+          <div class="volume-label">Mid-Volume</div>
+          <p class="volume-desc">Contractors, property managers, seasonal storm prep</p>
+        </div>
+        <div class="volume-card">
+          <div class="volume-number">10,000s</div>
+          <div class="volume-label">Large Scale</div>
+          <p class="volume-desc">Municipal stockpiling, military, large commercial operations</p>
+        </div>
+        <div class="volume-card">
+          <div class="volume-number">FTL</div>
+          <div class="volume-label">Full Truckloads</div>
+          <p class="volume-desc">Emergency response, government contracts, distribution</p>
+        </div>
+      </div>
+
+      <div class="volume-cta">
+        <a href="#quote" class="btn btn-primary">Request Volume Pricing</a>
+      </div>
+
+      <!-- Value Props -->
+      <div class="value-grid">
+        <div class="value-item">
+          <span class="value-icon" aria-hidden="true">&#9881;</span>
+          <div class="value-title">Factory Direct</div>
+          <p class="value-desc">No middleman markup</p>
+        </div>
+        <div class="value-item">
+          <span class="value-icon" aria-hidden="true">&#9744;</span>
+          <div class="value-title">Bulk Ready</div>
+          <p class="value-desc">Palletized, ready to ship</p>
+        </div>
+        <div class="value-item">
+          <span class="value-icon" aria-hidden="true">&#9889;</span>
+          <div class="value-title">Fast Turnaround</div>
+          <p class="value-desc">In-stock, ships within days</p>
+        </div>
+        <div class="value-item">
+          <span class="value-icon" aria-hidden="true">&#9635;</span>
+          <div class="value-title">Nationwide Delivery</div>
+          <p class="value-desc">Freight quotes included</p>
+        </div>
+        <div class="value-item">
+          <span class="value-icon" aria-hidden="true">&#8734;</span>
+          <div class="value-title">Any Quantity</div>
+          <p class="value-desc">No minimums, no maximums</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Buys From Us -->
+  <section id="industries" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <h2>Who Buys From Us</h2>
+        <p>From a few hundred bags to full truckloads &mdash; we supply every scale.</p>
+      </div>
+
+      <div class="audience-grid">
+        <div class="audience-card">
+          <span class="audience-icon" aria-hidden="true">&#9963;</span>
+          <h4>Government &amp; Municipal</h4>
+          <p>Flood preparedness stockpiles, public works departments, emergency management agencies. We supply the volume your community needs.</p>
+        </div>
+        <div class="audience-card">
+          <span class="audience-icon" aria-hidden="true">&#9733;</span>
+          <h4>Military &amp; Defense</h4>
+          <p>Force protection, FOB construction, ballistic fortification, flood response. Mil-spec performance at factory direct pricing.</p>
+        </div>
+        <div class="audience-card">
+          <span class="audience-icon" aria-hidden="true">&#9874;</span>
+          <h4>Contractors &amp; Construction</h4>
+          <p>Erosion control, site dewatering, temporary flood barriers. Order by the pallet, deliver to the job site.</p>
+        </div>
+        <div class="audience-card">
+          <span class="audience-icon" aria-hidden="true">&#9879;</span>
+          <h4>Property Managers &amp; Commercial</h4>
+          <p>Protect underground parking, loading docks, and building perimeters. Keep inventory on hand for storm season.</p>
+        </div>
+        <div class="audience-card">
+          <span class="audience-icon" aria-hidden="true">&#9750;</span>
+          <h4>Homeowners &amp; Communities</h4>
+          <p>Neighborhood flood prep, individual property protection, community buyback programs. We sell any quantity.</p>
+        </div>
+        <div class="audience-card">
+          <span class="audience-icon" aria-hidden="true">&#9782;</span>
+          <h4>Event Venues &amp; Entertainment</h4>
+          <p>Amusement parks, outdoor festivals, amphitheaters. Protect infrastructure and keep operations running.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HydraBarrier Partnership -->
+  <section id="barriers" class="section section-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="partnership-label">NEW Exclusive Partnership</span>
+        <h2>HydraBarrier BOGO &mdash; Only at SandbagOutlet</h2>
+        <p>We've partnered with HydraBarrier to bring you reusable flood barriers at an unbeatable deal. Buy one, get one free &mdash; limited time for flood season.</p>
+      </div>
+
+      <div class="hydra-features">
+        <div class="hydra-feature"><span class="icon">&#10003;</span> Reusable 100+ times</div>
+        <div class="hydra-feature"><span class="icon">&#10003;</span> Deploys in minutes</div>
+        <div class="hydra-feature"><span class="icon">&#10003;</span> One person setup</div>
+        <div class="hydra-feature"><span class="icon">&#10003;</span> No sand or disposal needed</div>
+        <div class="hydra-feature"><span class="icon">&#10003;</span> Compact roll-up storage</div>
+        <div class="hydra-feature"><span class="icon">&#10003;</span> Water-filled &mdash; zero material cost per use</div>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-badge" style="background: var(--cta);">Up to 20" Protection</div>
+          <h3>HydraBarrier Titan</h3>
+          <p class="product-desc">The go-to barrier for residential and commercial flood protection. Unroll, fill with water, and you're protected.</p>
+          <p class="product-price">6 ft ($225) &mdash; 100 ft ($1,895)</p>
+          <p class="product-ideal">Ideal for: residential, commercial entrances, loading docks</p>
+          <a href="https://hydrabarrier.com/products/hydrabarrier-titan-20?utm_source=sandbagoutlet&utm_medium=web&utm_campaign=bogo_spring26" target="_blank" rel="noopener" class="btn btn-primary">Shop Titan &mdash; BOGO Deal</a>
+        </div>
+        <div class="product-card">
+          <div class="product-badge" style="background: var(--cta);">Up to 30" Protection</div>
+          <h3>HydraBarrier Mammoth</h3>
+          <p class="product-desc">Maximum-height protection for severe flood events. Built for critical infrastructure and large-scale defense.</p>
+          <p class="product-price">6 ft ($395) &mdash; 35 ft ($1,695)</p>
+          <p class="product-ideal">Ideal for: underground parking, critical infrastructure, government &amp; military</p>
+          <a href="https://hydrabarrier.com/products/hydrabarrier-mammoth-30-height?utm_source=sandbagoutlet&utm_medium=web&utm_campaign=bogo_spring26" target="_blank" rel="noopener" class="btn btn-primary">Shop Mammoth &mdash; BOGO Deal</a>
+        </div>
+      </div>
+
+      <p class="partnership-note">As sandbag experts, we know flood protection. HydraBarrier is the best reusable alternative we've found.</p>
+    </div>
+  </section>
+
+  <!-- Choose What's Right -->
+  <section id="compare" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Sandbags vs. HydraBarrier &mdash; Choose What's Right for You</h2>
+        <p>Both get the job done. Here's when each option makes the most sense.</p>
+      </div>
+
+      <div class="choose-grid">
+        <div class="choose-card sandbags">
+          <h3>Choose Sandbags When&hellip;</h3>
+          <ul class="choose-list">
+            <li>You need a budget-friendly solution at any scale</li>
+            <li>Filling gaps, reinforcing levees, or weighing down structures</li>
+            <li>Custom shapes and flexible placement are required</li>
+            <li>Large-scale municipal, military, or government stockpiling</li>
+            <li>You have labor available to fill and stack</li>
+          </ul>
+        </div>
+        <div class="choose-card hydra">
+          <h3>Choose HydraBarrier When&hellip;</h3>
+          <ul class="choose-list">
+            <li>You need repeat-use protection season after season</li>
+            <li>Fast deployment is critical &mdash; minutes, not hours</li>
+            <li>Limited labor available (1 person can deploy)</li>
+            <li>Compact storage is a priority (rolls up small)</li>
+            <li>Protecting entrances, perimeters, or loading docks</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="choose-footnote">Not sure which is right for you? <a href="#quote">Contact us</a> for a free consultation.</p>
+    </div>
+  </section>
+
+  <!-- Quote Request Form -->
+  <section id="quote" class="quote-section">
+    <div class="container">
+      <div class="quote-inner">
+        <h2>Get Your Volume Quote in 24 Hours</h2>
+        <p>Tell us what you need and we'll send a custom quote with freight estimates within 1 business day.</p>
+        <form class="quote-form" action="https://formspree.io/f/PLACEHOLDER" method="POST">
+          <input type="text" name="name" placeholder="Full name" required autocomplete="name">
+          <input type="email" name="email" placeholder="Email address" required autocomplete="email">
+          <input type="tel" name="phone" placeholder="Phone (optional)" autocomplete="tel">
+          <input type="text" name="organization" placeholder="Organization / Company (optional)" autocomplete="organization">
+          <select name="quantity" required class="full-width">
+            <option value="" disabled selected>Estimated quantity</option>
+            <option value="100-500">100 &ndash; 500 bags</option>
+            <option value="500-1000">500 &ndash; 1,000 bags</option>
+            <option value="1000-5000">1,000 &ndash; 5,000 bags</option>
+            <option value="5000-10000">5,000 &ndash; 10,000 bags</option>
+            <option value="10000-50000">10,000 &ndash; 50,000 bags</option>
+            <option value="50000+">50,000+ bags</option>
+          </select>
+          <input type="text" name="zip" placeholder="Delivery zip code" required autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}" maxlength="5">
+          <select name="timeline" required>
+            <option value="" disabled selected>Timeline</option>
+            <option value="immediate">Immediate</option>
+            <option value="30-days">Within 30 days</option>
+            <option value="seasonal">Seasonal planning</option>
+            <option value="procurement">Gov't / contract procurement</option>
+          </select>
+          <textarea name="message" placeholder="Special requirements or notes (optional)" class="full-width"></textarea>
+          <button type="submit" class="btn btn-primary full-width">Request Pricing</button>
+        </form>
+        <p class="quote-note">All quotes include freight estimates. Response within 1 business day. Volume discounts applied automatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email Signup -->
+  <section id="signup" class="signup-section">
+    <div class="container">
+      <div class="signup-inner">
+        <h2>Storm Season Doesn't Wait. Neither Should You.</h2>
+        <p>Join our preparedness list &mdash; get early access to BOGO deals, bulk pricing updates, and a free storm prep checklist.</p>
+        <form class="signup-form" action="https://formspree.io/f/PLACEHOLDER" method="POST">
+          <input type="text" name="name" placeholder="Your name" required autocomplete="name">
+          <input type="email" name="email" placeholder="Email address" required autocomplete="email">
+          <input type="text" name="zip" placeholder="Zip code" class="full-width" required autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}" maxlength="5">
+          <button type="submit" class="btn btn-primary full-width">Get Storm-Ready</button>
+        </form>
+        <p class="signup-note">We respect your inbox. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <img src="images/logo.jpeg" alt="SandbagOutlet.com" class="footer-logo">
+      <p class="footer-brand">A Retro Technologies Company</p>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#sandbags">Sandbags</a></li>
+        <li><a href="#barriers">Flood Barriers</a></li>
+        <li><a href="#quote">Get a Quote</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Retro Technologies. All rights reserved.</p>
+      <p class="footer-tm">HydraBarrier&reg; is a registered trademark of Watershed Innovations.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+
+    // Close mobile nav on link click
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.remove('open');
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        var target = this.getAttribute('href');
+        if (target === '#') return;
+        var el = document.querySelector(target);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
